@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Home</title>
+  </head>
+  <body>
+    <h1>Messages</h1>
+    <a href="/new">New message</a>
+    <ul>
+      <% messages.forEach(message => {%>
+      <li>
+        <%- include('message', {user: message.user, added: message.added, text:
+        message.text}) %>
+      </li>
+      <% }) %>
+    </ul>
+  </body>
+</html>
