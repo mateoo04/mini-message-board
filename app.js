@@ -13,6 +13,11 @@ app.use('/new', (req, res) => res.render('form'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use((err, req, res, next) => {
+  console.log(err);
+  res.status(err.statusCode || 500).send(err.message);
+});
+
 app.listen(PORT, () =>
   console.log(`Server running - listening on port ${PORT}`)
 );

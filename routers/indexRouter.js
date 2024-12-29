@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const CustomNotFoundError = require('../errors/CustomNotFoundError');
 
 const indexRouter = Router();
 
@@ -22,6 +23,9 @@ indexRouter.get('/message', (req, res) => {
   const message = messages.find(
     (message) => message.id === Number(req.query.id)
   );
+
+  if (!message) throw new CustomNotFoundError('Message not found');
+
   res.render('messageDetails', {
     id: message.id,
     user: message.user,
