@@ -3,7 +3,7 @@ const indexRouter = require('./routers/indexRouter');
 const path = require('node:path');
 
 const app = express();
-const PORT = 3000;
+const port = process.env.PORT || 4000;
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -18,6 +18,6 @@ app.use((err, req, res, next) => {
   res.status(err.statusCode || 500).send(err.message);
 });
 
-app.listen(PORT, () =>
-  console.log(`Server running - listening on port ${PORT}`)
+app.listen(port, () =>
+  console.log(`Server running - listening on port ${port}`)
 );
