@@ -9,7 +9,7 @@
       <% messages.forEach(message => {%>
       <li>
         <%- include('message', {user: message.user, added: message.added, text:
-        message.text}) %>
+        message.text, id: message.id}) %>
       </li>
       <% }) %>
     </ul>

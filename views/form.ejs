@@ -1,12 +1,20 @@
-<form method="POST" action="/new">
-  <legend>New Message</legend>
-  <label for="user"
-    >User:
-    <input type="text" id="user" name="user" />
-  </label>
-  <label for="messageText"
-    >Message:
-    <input type="text" id="messageText" name="messageText" />
-  </label>
-  <input type="submit" value="ADD" />
-</form>
+<html>
+  <head>
+    <title>New Message</title>
+  </head>
+  <body>
+    <form method="POST" action="/new">
+      <legend>New Message</legend>
+      <label for="user"
+        >User:
+        <input type="text" id="user" name="user" />
+      </label>
+      <label for="messageText"
+        >Message:
+        <input type="text" id="messageText" name="messageText" />
+      </label>
+      <input type="submit" value="ADD" />
+    </form>
+    <a href="/"><button>CANCEL</button></a>
+  </body>
+</html>
