@@ -5,13 +5,18 @@
   <body>
     <h1>Messages</h1>
     <a href="/new">New message</a>
+    <a href="/delete">Delete all messages</a>
+    <% if(locals.messages){%>
     <ul>
       <% messages.forEach(message => {%>
       <li>
-        <%- include('message', {user: message.user, added: message.added, text:
-        message.text, id: message.id}) %>
+        <%- include('message', {username: message.username, date: message.date,
+        text: message.text, id: message.id}) %>
       </li>
       <% }) %>
     </ul>
+    <%} else{%>
+    <p>No messages found.</p>
+    <%}%>
   </body>
 </html>
